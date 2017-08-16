@@ -1,4 +1,4 @@
-$(document).keypress(function(e) {
+$(document).keydown(function(e) {
   var key = e.key;
   console.log(key);
   for (var i = 0; i < 9; i++) {
@@ -8,7 +8,51 @@ $(document).keypress(function(e) {
       $('#display').text(currentDisplay);
     }
   }
+  if (key == "+") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " + ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "*") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " * ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "-") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " - ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "/") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " / ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "=" || key == "Enter") {
+    var currentDisplay = $('#display').text();
+    var array = currentDisplay.split(" ");
+    if (array[1] == "+") {
+      $('#display').text(Number(array[0]) + Number(array[2]));
+    }
+    if (array[1] == "-") {
+      $('#display').text(Number(array[0]) - Number(array[2]));
+    }
+    if (array[1] == "*") {
+      $('#display').text(Number(array[0]) * Number(array[2]));
+    }
+    if (array[1] == "/") {
+      $('#display').text(Number(array[0]) / Number(array[2]));
+    }
+  }
+  if (key == "Backspace") {
+    var currentDisplay = $('#display').text();
+    currentDisplay = currentDisplay.substr(0, currentDisplay.length - 1);
+    $('#display').text(currentDisplay);
+  }
 });
+
+
+
 $('#0').click(function(e) {
   if (e.target.id === 0); {
     var currentDisplay = $('#display').text();
