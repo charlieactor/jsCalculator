@@ -49,6 +49,11 @@ $(document).keydown(function(e) {
     currentDisplay = currentDisplay.substr(0, currentDisplay.length - 1);
     $('#display').text(currentDisplay);
   }
+  if (key == ".") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += ".";
+    $('#display').text(currentDisplay);
+  }
 });
 
 
