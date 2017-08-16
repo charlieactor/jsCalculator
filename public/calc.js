@@ -1,7 +1,7 @@
 $(document).keydown(function(e) {
   var key = e.key;
   console.log(key);
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 10; i++) {
     if (key == i) {
       var currentDisplay = $('#display').text();
       currentDisplay += "" + i;
